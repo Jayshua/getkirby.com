@@ -57,6 +57,24 @@ addresses:
 
 You can define any number of fields and use the same field types listed in the menu on the left. The only exception is a structure field nested in a structure field.
 
+### Site Template
+
+Site Template
+
+Kirby itself has no knowledge of the structure field. As a result, when you use it in your templates all you have is the raw, YAML formatted data. To convert to a PHP array, call the `yaml` method on the structure data.
+
+```
+$structureItems = $page->structureField()->yaml();
+```
+
+Then you can loop through the array and echo the individual fields.
+
+```
+foreach($structureItems as $item) {
+  echo $item["field"];
+}
+```
+
 ### Entry template
 
 You can use the `entry` option to define how the entries will be displayed in the list view. The syntax for entry templates is very simple. Double curly brackets define a variable and will be replaced with the appropriate content.
