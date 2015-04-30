@@ -30,3 +30,15 @@ fields:
     type: date
     format: MM/DD/YYYY
 ```
+
+### Now
+
+You can set the default value to whatever the current date is by setting `default` to "now"
+
+```
+fields:
+  date:
+    label: Date
+    type: date
+    default: now
+```
